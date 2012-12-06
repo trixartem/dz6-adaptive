@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Перенос блоков</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	var width = $(window).width();
+	if (width <= 767) {
+		var height_center_block = $('.b-center').height();
+		$('.b-left').css({'margin-top' : height_center_block});
+		}
+		else {
+			$('.b-left').css({'margin-top' : '0px'});
+		}
+	$(window).resize(function (){
+		var width = $(window).width();
+		if (width <= 767) {
+		var height_center_block = $('.b-center').height();		
+		$('.b-left').css({'margin-top' : height_center_block});
+		}
+		else {
+			$('.b-left').css({'margin-top' : '0px'});
+		}
+	});
+   
+});
+
+</script>
+<style type="text/css">
+.b-left{
+	background-color:#000;
+	min-height:300px;
+}
+.b-center {
+	background-color:#666;
+	min-height:300px;			
+}
+.b-right {
+	background-color:#99C;
+	min-height:300px;			
+}
+@media  screen and (min-width:1000px){
+	.b-body{	
+	width:100%;
+	overflow:visible;
+	}
+.b-left {	
+	display:inline-block;
+	margin-left:-4px;
+	width:250px;	
+	
+			
+}
+.b-center {	
+	display:inline-block;
+	margin-left:-4px;
+	min-width:250px;	
+	width:50%;			
+		
+	
+}
+.b-right {
+	display:inline-block;
+	margin-left:-4px;	
+	width:250px;
+	
+}	
+}
+@media  screen and (min-width:768px) and (max-width:999px){ 
+.b-left {	
+	float:left;
+	min-width:250px;	
+	width:auto;
+			
+}
+.b-center {		
+	min-width:300px;		
+	width:auto;
+		
+	
+}
+.b-right {
+	min-width:250px;
+	width:auto;
+	
+}
+}
+@media screen  and (max-width:767px){
+.b-body{	
+	
+	}
+.b-left {		
+	min-width:150px;
+	width:100%;	
+	margin-top:300px;
+					
+}
+.b-center {	
+	top:0;	
+	position:absolute;	
+	min-width:150;		
+	width:100%;			
+}
+.b-right {	
+	clear:both;
+	min-width:150px;
+	width:100%;	
+}
+}
+
+</style>
+</head>
+
+<body>
+<div class="b-body">
+<div class='b-left'>left</div>
+<div class='b-center'>center</div>
+<div class='b-right'>right</div>
+</div>
+
+
+
+</body>
+</html>
